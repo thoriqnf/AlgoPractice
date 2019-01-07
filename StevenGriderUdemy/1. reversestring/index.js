@@ -6,7 +6,12 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {}
+function reverse(str) {
+  return str
+    .split("")
+    .reverse()
+    .join("");
+}
 
 module.exports = reverse;
 
@@ -17,6 +22,8 @@ module.exports = reverse;
 //     .reverse()
 //     .join('');
 // }
+
+// .reverse hanya bisa untuk array dan tak bisa untuk string makanya di awal di split dulu untuk chunk dari string ke array dan di sambungkan lagi pakai .join
 
 // 2nd solution (using for loop)
 // function reverse(str) {
