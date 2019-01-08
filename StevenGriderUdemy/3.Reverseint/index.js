@@ -8,22 +8,16 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+// Reverse Integer tapi kalo minus di reverse juga, kalo ada 0 nya di depan di kosongin
+// Using 3 technique toString untuk ngerubah number jadi string, parseInt balikin string jadi number & Math.sign untuk ngehandle kalo ada minus
+
 function reverseInt(n) {
-  const reversedInt = n
+  const reversed = n
     .toString()
-    .split('')
+    .split("")
     .reverse()
-    .join('') 
-    return parseInt(reversedInt) * Math.sign(n);
+    .join("");
+  return parseInt(reversed) * Math.sign(n);
 }
 
 module.exports = reverseInt;
-
-// Not Clean Code
-// function reverseInt(n) {
-//   return parseInt(n
-//     .toString()
-//     .split('')
-//     .reverse()
-//     .join('')) * Math.sign(n);
-// }
