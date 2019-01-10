@@ -11,17 +11,31 @@
 // chunk artinya motong, ngecilin
 // dari array panjang di kecilin jadi subarray
 
+// 1st solution
+// function chunk(array, size) {
+//   const chunked = [];
+//   for (let elemetn of array){
+//     const last = chunked[chunked.legth - 1];
+
+//     if (!last || last.length === size){
+//       chunked.push([element]);
+//     } else {
+//       last.push(element);
+//     }
+//   }
+//   return chunked;
+// }
+
+// 2nd solution using slice
 function chunk(array, size) {
   const chunked = [];
-  for (let elemetn of array){
-    const last = chunked[chunked.legth - 1];
+  let index = 0;
 
-    if (!last || last.length === size){
-      chunked.push([element]);
-    } else {
-      last.push(element);
-    }
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size;
   }
+
   return chunked;
 }
 
